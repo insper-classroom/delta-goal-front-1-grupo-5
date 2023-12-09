@@ -42,6 +42,12 @@ def desenhar_campo(Lista_porcentagem=None):
     # area_lado_direito = patches.Rectangle(((largura_campo - largura_campo / 5)*1.06, altura_campo / 2 - altura_area / 2), largura_campo / 5, altura_area, linewidth=2, edgecolor='white', facecolor='none')
     # area_goleiro_direito = patches.Rectangle((94.2,22), largura_campo / 14, 16, linewidth=2, edgecolor='white', facecolor='none')
 
+
+    nomes_das_chaves = Lista_porcentagem.keys()
+    chaves = []
+    for chave in nomes_das_chaves:
+        chaves.append(chave)
+
     plt.text(6.5, 33.3, f"{Lista_porcentagem[2]}", fontsize=10, color='White') 
     plt.text(24, 33.3, f"{Lista_porcentagem[4]}", fontsize=10, color='White') 
     plt.text(50, 33.3,f"", fontsize=10, color='black') 
