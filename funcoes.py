@@ -4,7 +4,7 @@ import json
 import requests
 
 # URL do servidor Flask
-url = "https://grupo-5-sprint-027e13457cd0.herokuapp.com/"
+url = "https://grupo-5-sprint-027e13457cd0.herokuapp.com"
 
 def cadastra_usuario(email, senha, clube):
     payload = {"email": email, "senha": senha, "clube": clube}
