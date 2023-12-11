@@ -18,12 +18,11 @@ def main():
     if 'usuario' not in st.session_state or st.session_state.usuario is None:
         # st.set_page_config(layout="centered")
         login_cadastro()
-    elif 'ir_para_analise' in st.session_state and st.session_state['ir_para_analise']:
-        with open('quebra.json', 'r') as f:
-            data = json.load(f)
-            time = 'Palmeiras'
-            id = '1'
-        trata_dados(data, time, id, 'quebra')
+    elif 'ir_para_analise' in st.session_state and st.session_state['ir_para_analise'] and 'json' in st.session_state and st.session_state['json'] is not None:
+        json = st.session_state['json']
+        time = st.session_state['clube']
+        id = '1'
+        trata_dados(json, time, id, 'quebra')
     else:
         st.set_page_config(layout="wide")
         paginas()
@@ -299,6 +298,7 @@ def pagina_partidas(partidas):
         with col3:
             if st.button('Estatísticas', key=f'botao_analise_{index}'):
                 st.session_state['ir_para_analise'] = True
+                st.session_state['json'] = partida['json_quebra']
                 st.rerun()
 
 # 7- Controle de navegação entre as páginas
