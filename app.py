@@ -11,7 +11,7 @@ import json
 from IPython.display import HTML
 from rupturas.campo_caio import *
 from rupturas.dashboard import *
-
+import copy
 
 # 1- Função principal para o aplicativo
 def main():
@@ -29,7 +29,7 @@ def main():
         # st.set_page_config(layout="centered")
         login_cadastro()
     elif 'ir_para_analise' in st.session_state and st.session_state['ir_para_analise'] and 'json' in st.session_state and st.session_state['json'] is not None:
-        json = st.session_state['json']
+        json = copy.deepcopy(st.session_state['json'])
         time = st.session_state['clube']
         id = '1'
         st.session_state['ir_para_analise'] = True
