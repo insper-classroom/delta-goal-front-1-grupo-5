@@ -33,7 +33,7 @@ def main():
         time = st.session_state['clube']
         id = '1'
         st.session_state['ir_para_analise'] = True
-        trata_dados(json, time, id, 'quebra')
+        trata_dados(json, time, id, st.session_state['zonas'], st.session_state['jogador'], st.session_state['desfechos_rep'])
     else:
         st.set_page_config(layout="wide")
         paginas()
