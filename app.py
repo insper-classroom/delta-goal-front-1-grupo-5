@@ -32,7 +32,7 @@ def main():
         with open('quebra.json', 'r') as f:
             data = json.load(f)
             time = 'Palmeiras'
-            id = '5'
+            id = '1'
 
         st.session_state['ir_para_analise'] = True
         trata_dados(data, st.session_state.time, id, st.session_state.zonas, st.session_state.jogador, st.session_state.desfechos_rep)
@@ -233,6 +233,7 @@ def filtro_rup(dados, df_desfechos, id):
 
 # 4- DashBoards
 def dashboards(cores_personalizadas, df_rupturas, df_desfechos, contagem_desfechos, lista_porcentagem, dados, id):
+    print('ASODJASPODJSAOPJAS',lista_porcentagem)
     with open("design/style/dashboard.css") as d:
         st.markdown(f"<style>{d.read()}</style>", unsafe_allow_html=True)
     
@@ -263,6 +264,7 @@ def dashboards(cores_personalizadas, df_rupturas, df_desfechos, contagem_desfech
         col1, space, col2 = st.columns([8,1,8])
         with col1:
             figura = desenhar_campo(lista_porcentagem)
+            
             st.pyplot(figura)
             fig = px.pie(contagem_desfechos, names='Desfecho', values='Quantidade', title='Quantidade de Desfechos', hover_data=['Porcentagem'])
             st.plotly_chart(fig, use_container_width=True)

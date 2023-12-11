@@ -48,18 +48,18 @@ def desenhar_campo(Lista_porcentagem=None):
     for chave in nomes_das_chaves:
         chaves.append(chave)
 
-    plt.text(6.5, 33.3, f"{Lista_porcentagem[2]}", fontsize=10, color='White') 
-    plt.text(24, 33.3, f"{Lista_porcentagem[4]}", fontsize=10, color='White') 
+    plt.text(6.5, 50, f"{chaves[0]}", fontsize=10, color='White') 
+    plt.text(24, 50, f"{chaves[1]}", fontsize=10, color='White')  
     plt.text(50, 33.3,f"", fontsize=10, color='black') 
-    plt.text(66, 33.3, f"{Lista_porcentagem[0]}", fontsize=10, color='White') 
-    plt.text(84, 33.3, f"{Lista_porcentagem[6]}", fontsize=10, color='White')
+    plt.text(66, 50, f"{chaves[2]}", fontsize=10, color='White') 
+    plt.text(84, 50, f"{chaves[3]}", fontsize=10, color='White')
     
 
-    plt.text(2, 26, f"  {Lista_porcentagem[1]}", fontsize=14, color='White') 
-    plt.text(22, 26, f"  {Lista_porcentagem[3]}", fontsize=14, color='White') 
+    plt.text(2, 45, f"  {Lista_porcentagem['Zona 1']}", fontsize=14, color='White') 
+    plt.text(22, 45, f"  {Lista_porcentagem['Zona 1 - B']}", fontsize=14, color='White') 
     plt.text(42, 26, f" ", fontsize=14, color='black') 
-    plt.text(62, 26, f"  {Lista_porcentagem[5]}", fontsize=14, color='White') 
-    plt.text(82, 26, f"  {Lista_porcentagem[7]}", fontsize=14, color='White') 
+    plt.text(62, 45, f"  {Lista_porcentagem['Zona 2']}", fontsize=14, color='White') 
+    plt.text(82, 45, f"  {Lista_porcentagem['Zona 2 - B']}", fontsize=14, color='White') 
 
     # ax.add_patch(area_lado_esquerdo)
     # ax.add_patch(area_goleiro_esquerdo)
